@@ -16,7 +16,7 @@ const TrainingComponent = () => {
 
     return (
         <div>
-            <h1>Trainings</h1>
+            <h1>Treningi</h1>
             <ul>
                 {trainings.map(training => (
                     <li key={training.id}>{training.name}</li>

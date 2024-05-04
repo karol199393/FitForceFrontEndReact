@@ -1,39 +1,42 @@
 import React from 'react';
-import MyComponent from './components/mycomponent';
 import TrainingComponent from './components/TrainingComponent';
 import './App.css';
-import BasicMenu from './components/BasicMenu';
+import { Route, NavLink, BrowserRouter } from 'react-router-dom';
+import { Routes } from 'react-router-dom';
+
+const PlayersComponent = () => {
+  return <h2>Podopieczni</h2>;
+};
+
+const CalendarComponent = () => {
+  return <h2>Kalendarz</h2>;
+};
+const StartComponent = () => {
+  return <h2>Start</h2>;
+};
 
 function App() {
   return (
-    <>
-      <div className="containerTop">
-        <div className='leftMenu'>
-          <ul className='topnav'>
-            <li><a href="#Treningi">Treningi</a></li>
-            <li><a href="#Podopieczni">Podopieczni</a></li>
-            <li><a href="#Kalendarz">Kalendarz</a></li>
-            <li><a href="#Elementarz Ćwiczeń">Elementarz Ćwiczeń</a></li>
+    <BrowserRouter>
+      <div>
+        <nav>
+          <ul>
+            <li><NavLink to="/">Start</NavLink></li> 
+            <li><NavLink to="/players">Podopieczni</NavLink></li> 
+            <li><NavLink to="/training">Treningi</NavLink></li> 
+            <li><NavLink to="/calendar">Kalendarz</NavLink></li>   
           </ul>
-
-        </div>
-        <div className='rightMenu'>
-        <BasicMenu />
-        </div>
-
-
-
-
+        </nav> 
       </div>
-      <div className='containerMain'>
-        <h1>FitForce</h1>
-        <p>Zarządzanie Treningiem</p>
-        <MyComponent />
-        <TrainingComponent />
-
-      </div><div className="containerBottom"><h1>Dolny kontener</h1></div></>
-
-
+      <section>
+        <Routes>
+        <Route path="/" element={<StartComponent />} />  
+        <Route path="/training" element={<TrainingComponent />} />
+        <Route path="/players" element={<PlayersComponent />} />
+        <Route path="/calendar" element={<CalendarComponent />} />
+        </Routes>
+      </section>
+    </BrowserRouter>
   );
 }
 
