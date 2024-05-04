@@ -23,7 +23,6 @@ const TrainingComponent = () => {
                 ))}
             </ul>
         </div>
-    );
-};
+    );};
 
 export default TrainingComponent;

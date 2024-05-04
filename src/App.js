@@ -3,6 +3,8 @@ import TrainingComponent from './components/TrainingComponent';
 import './App.css';
 import { Route, NavLink, BrowserRouter } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
+import Login from './components/login';
+import Register from './components/register';
 
 const PlayersComponent = () => {
   return <h2>Podopieczni</h2>;
@@ -15,12 +17,6 @@ const StartComponent = () => {
   return <h2>Start</h2>;
 };
 
-const LoginComponent = () => {
-  return <h2>Logowanie</h2>;
-};
-const RegisterComponent = () => {
-  return <h2>Rejestracja</h2>;
-};
 
 function App() {
   return (
@@ -46,8 +42,8 @@ function App() {
         <Route path="/training" element={<TrainingComponent />} />
         <Route path="/players" element={<PlayersComponent />} />
         <Route path="/calendar" element={<CalendarComponent />} />
-        <Route path="/login" element={<LoginComponent />} />
-        <Route path="/register" element={<RegisterComponent />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
   );

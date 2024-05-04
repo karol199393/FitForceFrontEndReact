@@ -48,3 +48,11 @@ section {
 .nav-main li, .nav-auth li {
   list-style-type: none;
 }
+
+.nav-main a, .nav-auth a {
+  text-decoration: none;
+}
+
+.nav-main a.active, .nav-auth a.active {
+  text-decoration: underline;
+}
