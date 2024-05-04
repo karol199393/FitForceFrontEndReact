@@ -39,3 +39,12 @@ section {
 .active {
   border-bottom-color: yellow;
 }
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-main li, .nav-auth li {
+  list-style-type: none;
+}

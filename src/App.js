@@ -15,27 +15,40 @@ const StartComponent = () => {
   return <h2>Start</h2>;
 };
 
+const LoginComponent = () => {
+  return <h2>Logowanie</h2>;
+};
+const RegisterComponent = () => {
+  return <h2>Rejestracja</h2>;
+};
+
 function App() {
   return (
     <BrowserRouter>
       <div>
         <nav>
-          <ul>
-            <li><NavLink to="/">Start</NavLink></li> 
-            <li><NavLink to="/players">Podopieczni</NavLink></li> 
-            <li><NavLink to="/training">Treningi</NavLink></li> 
-            <li><NavLink to="/calendar">Kalendarz</NavLink></li>   
+          <ul className="nav-list">
+            <div className="nav-main">
+              <li><NavLink to="/">Start</NavLink></li> 
+              <li><NavLink to="/players">Podopieczni</NavLink></li> 
+              <li><NavLink to="/training">Treningi</NavLink></li> 
+              <li><NavLink to="/calendar">Kalendarz</NavLink></li>   
+            </div>
+            <div className="nav-auth">
+              <li><NavLink to="/login">Logowanie</NavLink></li>   
+              <li><NavLink to="/register">Rejestracja</NavLink></li>   
+            </div>
           </ul>
         </nav> 
       </div>
-      <section>
-        <Routes>
+      <Routes>
         <Route path="/" element={<StartComponent />} />  
         <Route path="/training" element={<TrainingComponent />} />
         <Route path="/players" element={<PlayersComponent />} />
         <Route path="/calendar" element={<CalendarComponent />} />
-        </Routes>
-      </section>
+        <Route path="/login" element={<LoginComponent />} />
+        <Route path="/register" element={<RegisterComponent />} />
+      </Routes>
     </BrowserRouter>
   );
 }
