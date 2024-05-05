@@ -5,6 +5,7 @@ import { Route, NavLink, BrowserRouter } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
 import Login from './components/login';
 import Register from './components/register';
+import Exercises from './components/exercises';
 
 const PlayersComponent = () => {
   return <h2>Podopieczni</h2>;
@@ -27,7 +28,8 @@ function App() {
             <div className="nav-main">
               <li><NavLink to="/">Start</NavLink></li> 
               <li><NavLink to="/players">Podopieczni</NavLink></li> 
-              <li><NavLink to="/training">Treningi</NavLink></li> 
+              <li><NavLink to="/training">Treningi</NavLink></li>
+              <li><NavLink to="/exercises">Ćwiczenia</NavLink></li>  
               <li><NavLink to="/calendar">Kalendarz</NavLink></li>   
             </div>
             <div className="nav-auth">
@@ -40,6 +42,7 @@ function App() {
       <Routes>
         <Route path="/" element={<StartComponent />} />  
         <Route path="/training" element={<TrainingComponent />} />
+        <Route path="/exercises" element={<Exercises />} />
         <Route path="/players" element={<PlayersComponent />} />
         <Route path="/calendar" element={<CalendarComponent />} />
         <Route path="/login" element={<Login />} />

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import './training.css';
 
 const TrainingComponent = () => {
     const [trainings, setTrainings] = useState([]);
@@ -17,12 +18,25 @@ const TrainingComponent = () => {
     return (
         <div>
             <h1>Treningi</h1>
-            <ul>
-                {trainings.map(training => (
-                    <li key={training.id}>{training.name}</li>
-                ))}
-            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nazwa Treningu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {trainings.map(training => (
+                        <tr key={training.id}>
+                            <td>{training.id}</td>
+                            <td>{training.name}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </div>
-    );};
+    );
+};
+
 
 export default TrainingComponent;
