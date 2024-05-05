@@ -2,14 +2,18 @@
   margin : 0;
   padding : 0;
   box-sizing : border-box;
+  
 }
 
- nav {
+nav {
   background-color: black;
+  
 }
+
 ul {
   display:flex;
   list-style: none;
+  
 }
 
 li {
@@ -18,17 +22,14 @@ li {
 
 a {
   display: block;
-  font-family:arial;
   text-align: center;
   padding: 15px 25px;
-  color: white;
-  text-decoration: none;
   text-transform: uppercase;
-  border-bottom: 4px solid black;
+ 
 }
 
-a :hover {
-  color:yellow;
+a:hover {
+  color: white; 
 }
 
 section {
@@ -37,7 +38,7 @@ section {
 }
 
 .active {
-  border-bottom-color: yellow;
+  border-bottom-color: yellowgreen
 }
 
 .nav-list {
@@ -51,6 +52,8 @@ section {
 
 .nav-main a, .nav-auth a {
   text-decoration: none;
+  color: yellowgreen;
+  border-bottom-color:yellowgreen;
 }
 
 .nav-main a.active, .nav-auth a.active {

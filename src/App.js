@@ -6,17 +6,9 @@ import { Routes } from 'react-router-dom';
 import Login from './components/login';
 import Register from './components/register';
 import Exercises from './components/exercises';
-
-const PlayersComponent = () => {
-  return <h2>Podopieczni</h2>;
-};
-
-const CalendarComponent = () => {
-  return <h2>Kalendarz</h2>;
-};
-const StartComponent = () => {
-  return <h2>Start</h2>;
-};
+import Players from './components/players';
+import Calendar from './components/calendar';
+import Start from './components/start';
 
 
 function App() {
@@ -26,7 +18,7 @@ function App() {
         <nav>
           <ul className="nav-list">
             <div className="nav-main">
-              <li><NavLink to="/">Start</NavLink></li> 
+              <li><NavLink to="/start">Start</NavLink></li> 
               <li><NavLink to="/players">Podopieczni</NavLink></li> 
               <li><NavLink to="/training">Treningi</NavLink></li>
               <li><NavLink to="/exercises">Ćwiczenia</NavLink></li>  
@@ -40,11 +32,11 @@ function App() {
         </nav> 
       </div>
       <Routes>
-        <Route path="/" element={<StartComponent />} />  
+        <Route path="/start" element={< Start/>} />  
         <Route path="/training" element={<TrainingComponent />} />
         <Route path="/exercises" element={<Exercises />} />
-        <Route path="/players" element={<PlayersComponent />} />
-        <Route path="/calendar" element={<CalendarComponent />} />
+        <Route path="/players" element={<Players />} />
+        <Route path="/calendar" element={<Calendar />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
