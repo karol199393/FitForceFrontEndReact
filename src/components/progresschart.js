@@ -24,9 +24,18 @@ ChartJS.register(
 
 function ProgressChart() {
     const [data, setData] = useState(null);
+    const [goal, setGoal] = useState('weight-loss-goal');
+
+    const goals = [
+        'weight-loss-goal',
+        'waist-loss-goal',
+        'hip-loss-goal',
+        'chest-loss-goal',
+        'arm-loss-goal'
+    ];
 
     useEffect(() => {
-        fetch(`http://localhost:8080/api/weight-loss-goal/weight-loss-goal`)
+        fetch(`http://localhost:8080/api/weight-loss-goal/${goal}`)
             .then(response => {
                 console.log('Response from API:', response);
                 return response.json();
@@ -36,8 +45,8 @@ function ProgressChart() {
                 const chartData = {
                     labels: data.map(item => item.date),
                     datasets: [{
-                        label: 'Weight Loss Goal',
-                        data: data.map(item => item.weight),
+                        label: 'Goal Progress',
+                        data: data.map(item => item.value),
                         fill: false,
                         borderColor: 'rgb(75, 192, 192)',
                         tension: 0.1
@@ -45,10 +54,15 @@ function ProgressChart() {
                 };
                 setData(chartData);
             });
-    }, []);
+    }, [goal]);
 
     return (
         <div>
+            <select value={goal} onChange={e => setGoal(e.target.value)}>
+                {goals.map(goal => (
+                    <option key={goal} value={goal}>{goal}</option>
+                ))}
+            </select>
             {data && <Line data={data} />}
         </div>
     );
