@@ -31,11 +31,12 @@ function ProgressChart() {
         'waist-loss-goal',
         'hip-loss-goal',
         'chest-loss-goal',
-        'arm-loss-goal'
+        'arm-loss-goal',
+        'calories',
     ];
 
     useEffect(() => {
-        fetch(`http://localhost:8080/api/weight-loss-goal/${goal}`)
+        fetch(`http://localhost:8080/api/training-goals/${goal}`)
             .then(response => {
                 console.log('Response from API:', response);
                 return response.json();
