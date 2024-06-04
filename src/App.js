@@ -6,7 +6,7 @@ import { Routes } from 'react-router-dom';
 import Login from './components/login';
 import Register from './components/register';
 import Exercises from './components/exercises';
-import Players from './components/players';
+import TrainingGoals from './components/traininggoals';
 import Calendar from './components/calendar';
 import Start from './components/start';
 import { SlLogin } from "react-icons/sl";
@@ -31,7 +31,7 @@ function App() {
           <ul className="nav-list">
             <div className="nav-main">
               <li><NavLink to="/start"> <IoHomeOutline/> Start</NavLink></li> 
-              <li><NavLink to="/players"> <TbGymnastics /> Podopieczni</NavLink></li> 
+              <li><NavLink to="/traininggoals"> <TbGymnastics /> Pomiar Progresu</NavLink></li> 
               <li><NavLink to="/training"> <CgGym /> Treningi</NavLink></li>
               <li><NavLink to="/exercises"> <CiViewList /> Ćwiczenia</NavLink></li>  
               <li><NavLink to="/progresschart"> <GiProgression /> Progres</NavLink></li>
@@ -49,7 +49,7 @@ function App() {
         <Route path="/start" element={< Start/>} />  
         <Route path="/training" element={<TrainingComponent />} />
         <Route path="/exercises" element={<Exercises />} />
-        <Route path="/players" element={<Players />} />
+        <Route path="/traininggoals" element={<TrainingGoals />} />
         <Route path="/progresschart" element={<ProgressChart />} />
         <Route path="/calendar" element={<Calendar />} />
         <Route path="/login" element={<Login />} />
