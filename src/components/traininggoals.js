@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./traininggoals.css";
 
 export default function TrainingGoals() {
     const [date, setDate] = useState("");
